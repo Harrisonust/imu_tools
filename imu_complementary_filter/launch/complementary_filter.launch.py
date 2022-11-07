@@ -17,6 +17,10 @@ def generate_launch_description():
                     {'gain_acc': 0.01},
                     {'gain_mag': 0.01},
                 ],
+                remappings=[
+                    ("/imu/data_raw", "/Imu_raw0"),
+                    ("/imu/data", "/Imu0")
+                ]
             )
         ]
     )
