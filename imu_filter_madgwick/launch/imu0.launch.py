@@ -14,8 +14,8 @@ def generate_launch_description():
         [
             launch_ros.actions.Node(
                 package='imu_filter_madgwick',
-                node_executable='imu_filter_madgwick_node',
-                node_name='imu_filter',
+                executable='imu_filter_madgwick_node',
+                name='imu_filter_madgwick0',
                 output='screen',
                 parameters=[
                     os.path.join(config_dir, 'imu_filter.yaml'),
@@ -23,8 +23,8 @@ def generate_launch_description():
                     {'fixed_frame': "imu0"},
                 ],
                 remappings=[
-                    ("/imu/data_raw", "/Imu_raw0"),
-                    ("/imu/mag", "/Mag_raw0"),
+                    ("/imu/data_raw", "/Raw/Imu0"),
+                    ("/imu/mag", "/Raw/Mag0"),
                     ("/imu/data", "/Imu0")
                 ]
             )
