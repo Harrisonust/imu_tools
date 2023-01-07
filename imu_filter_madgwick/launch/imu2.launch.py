@@ -23,8 +23,8 @@ def generate_launch_description():
                     {'fixed_frame': "imu2"},
                 ],
                 remappings=[
-                    ("/imu/data_raw", "/Raw/Imu2"),
-                    ("/imu/mag", "/Raw/Mag2"),
+                    ("/imu/data_raw", "/Imu2/Raw"),
+                    ("/imu/mag", "/Imu2/Mag"),
                     ("/imu/data", "/Imu2")
                 ]
             )
