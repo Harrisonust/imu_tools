@@ -14,12 +14,12 @@ def generate_launch_description():
                         get_package_share_directory('imu_filter_madgwick'),
                         'launch/imu0.launch.py'))
             ), 
-            # IncludeLaunchDescription(
-            #     PythonLaunchDescriptionSource(
-            #         os.path.join(
-            #             get_package_share_directory('imu_filter_madgwick'),
-            #             'launch/imu1.launch.py'))
-            # ), 
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    os.path.join(
+                        get_package_share_directory('imu_filter_madgwick'),
+                        'launch/imu1.launch.py'))
+            ), 
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
                     os.path.join(
@@ -29,12 +29,17 @@ def generate_launch_description():
             Node(
                 package='tf2_ros',
                 executable='static_transform_publisher',
-                arguments=['1', '1', '1', '0', '0', '0', 'palm', 'imu0']
+                arguments=['2', '0', '2', '0', '0', '0', 'palm', 'imu0']
             ),
             Node(
                 package='tf2_ros',
                 executable='static_transform_publisher',
-                arguments=['-1', '-1', '1', '0', '0', '0', 'palm', 'imu2']
+                arguments=['0', '0', '2', '0', '0', '0', 'palm', 'imu1']
+            ),
+            Node(
+                package='tf2_ros',
+                executable='static_transform_publisher',
+                arguments=['-2', '0', '2', '0', '0', '0', 'palm', 'imu2']
             ),
         ]
     )
