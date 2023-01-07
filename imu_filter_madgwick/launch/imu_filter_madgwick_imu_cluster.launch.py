@@ -25,6 +25,18 @@ def generate_launch_description():
                     os.path.join(
                         get_package_share_directory('imu_filter_madgwick'),
                         'launch/imu_filter_madgwick_imu2.launch.py'))
-            )
+            ),
+            Node(
+                package='tf2_ros',
+                executable='static_transform_publisher',
+                name='tf2_ros0', 
+                arguments=['1', '1', '1', '0', '0', '0', 'palm', 'imu0']
+            ),
+            Node(
+                package='tf2_ros',
+                executable='static_transform_publisher',
+                name='tf2_ros2', 
+                arguments=['-1', '-1', '1', '0', '0', '0', 'palm', 'imu2']
+            ),
         ]
     )

@@ -17,7 +17,11 @@ def generate_launch_description():
                 node_executable='imu_filter_madgwick_node',
                 node_name='imu_filter',
                 output='screen',
-                parameters=[os.path.join(config_dir, 'imu_filter.yaml')],
+                parameters=[
+                    os.path.join(config_dir, 'imu_filter.yaml'),
+                    {'use_mag': False},
+                    {'fixed_frame': "imu2"},
+                ],
                 remappings=[
                     ("/imu/data_raw", "/Imu_raw2"),
                     ("/imu/mag", "/Mag_raw2"),
