@@ -19,7 +19,7 @@ def generate_launch_description():
                 output='screen',
                 parameters=[
                     os.path.join(config_dir, 'imu_filter.yaml'),
-                    {'use_mag': True},
+                    {'use_mag': False},
                     {'fixed_frame': "imu0"},
                 ],
                 remappings=[
