@@ -20,6 +20,7 @@ def generate_launch_description():
                 parameters=[
                     os.path.join(config_dir, 'imu_filter.yaml'),
                     {'use_mag': False},
+                    {'publish_tf': False},
                 ],
                 remappings=[
                     ("/imu/data_raw", "/Imu2/Raw"),
