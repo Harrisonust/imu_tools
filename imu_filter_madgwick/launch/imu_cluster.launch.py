@@ -26,23 +26,23 @@ def generate_launch_description():
                         get_package_share_directory('imu_filter_madgwick'),
                         'launch/imu2.launch.py'))
             ),
-            Node(
-                package='tf2_ros',
-                executable='static_transform_publisher',
-                name='palm_to_imu0',
-                arguments=['2', '0', '2', '0', '0', '0', 'palm', 'imu0']
-            ),
-            Node(
-                package='tf2_ros',
-                executable='static_transform_publisher',
-                name='palm_to_imu1',
-                arguments=['0', '0', '2', '0', '0', '0', 'palm', 'imu1']
-            ),
-            Node(
-                package='tf2_ros',
-                executable='static_transform_publisher',
-                name='palm_to_imu2',
-                arguments=['-2', '0', '2', '0', '0', '0', 'palm', 'imu2']
-            ),
+            # Node(
+            #     package='tf2_ros',
+            #     executable='static_transform_publisher',
+            #     name='palm_to_imu0',
+            #     arguments=['2', '0', '2', '0', '0', '0', 'palm', 'imu0']
+            # ),
+            # Node(
+            #     package='tf2_ros',
+            #     executable='static_transform_publisher',
+            #     name='palm_to_imu1',
+            #     arguments=['0', '0', '2', '0', '0', '0', 'palm', 'imu1']
+            # ),
+            # Node(
+            #     package='tf2_ros',
+            #     executable='static_transform_publisher',
+            #     name='palm_to_imu2',
+            #     arguments=['-2', '0', '2', '0', '0', '0', 'palm', 'imu2']
+            # ),
         ]
     )
